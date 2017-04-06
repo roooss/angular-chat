@@ -9,7 +9,16 @@ $foundation-palette: (
     alert: #cc4b37
 );
 
+body {
+    background-color: #302f2e;
+}
+
+a {	   
+   color: #d19462;
+}
+
 .title-bar {
+    background-color:#231000;
     width: 100%;
     z-index: 10;
     transition: height .25s ease;
@@ -21,5 +30,6 @@ $foundation-palette: (
 
     .title-bar-right {
 	padding-top: 1.4em;
+
     }
 }
