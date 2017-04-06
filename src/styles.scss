@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/foundation-sites/assets/foundation";
+
+$foundation-palette: (
+    primary: #3366cc,
+    secondary: #767676,
+    success: #3adb76,
+    warning: #ffae00,
+    alert: #cc4b37
+);
+
+.title-bar {
+    width: 100%;
+    z-index: 10;
+    transition: height .25s ease;
+    height: 4.5em;
+
+    .title-bar-right, .title-bar-left {
+	transition: padding-top .25s ease;
+    }
+
+    .title-bar-right {
+	padding-top: 1.4em;
+    }
+}

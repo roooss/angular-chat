@@ -1,5 +1,19 @@
-<h1>
-  {{title}}
-</h1>
-<app-home></app-home>
-<router-outlet></router-outlet>
+<div data-sticky-container>
+    <div class="title-bar" data-sticky-options="margin-top: 0;" style="width: 100%">
+        <div class="title-bar-left">
+	    <h1>Word.</h1>
+	</div>
+	<div class="totle-bar-right">
+	    <ul class="dropdown menu align-right" data-dropdown-menu>
+		<li><a href="#">Item 1A</a></li>
+		<li><a href="#">Item B1</a></li>
+	    </ul>
+	</div>
+    </div>
+</div>
+<div class="row">
+    <h1>{{title}}</h1>
+</div>
+<div class="row">
+    <router-outlet></router-outlet>
+</div>
