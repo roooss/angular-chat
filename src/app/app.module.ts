@@ -14,6 +14,7 @@ import { PlayerInfoComponent } from './components/player-info/player-info.compon
 
 import { CocService } from './services/coc.service';
 import { ClashService } from './services/clash.service';
+import { MemberListComponent } from './components/member-list/member-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ClashService } from './services/clash.service';
     ChatScreenComponent,
     ClanComponent,
     WarLogComponent,
-    PlayerInfoComponent
+    PlayerInfoComponent,
+    MemberListComponent
   ],
   imports: [
     BrowserModule,

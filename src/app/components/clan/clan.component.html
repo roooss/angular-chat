@@ -1,3 +1,64 @@
-<p>clan works!</p>
-<p>{{ details.name }}</p>
-<p>{{ errorMessage }}</p>
+<br />
+
+<div class="row clan-header">
+    <div class="medium-6 columns">
+	<img src="{{ details.badgeUrls.large }}" alt="Clan Badge" />
+    </div>
+    <div class="medium-6 large-5 columns">
+	<h3>{{ details.name }}</h3>
+	<p>{{ details.description }}</p>
+	<div class="row">
+	    <div class="small-3 columns">
+		<label >Clan Level:</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>{{ details.clanLevel }}</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>Clan Points:</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>{{ details.clanPoints }}</label>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="small-3 columns">
+		<label >War Wins:</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>{{ details.warWins }}</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>War Streak:</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>{{ details.warWinStreak }}</label>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="small-3 columns">
+		<label >War Losses:</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>{{ details.warLosses }}</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>War Ties:</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>{{ details.warTies }}</label>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="small-9 columns">
+		<label >Clan Member Count:</label>
+	    </div>
+	    <div class="small-3 columns">
+		<label>{{ details.members }}</label>
+	    </div>
+	</div>
+    </div>
+</div>
+<div class="row">
+    <member-list [memberList]="details.memberList"></member-list>
+</div>

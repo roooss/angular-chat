@@ -1,0 +1,22 @@
+<table>
+    <thead>
+	<tr>
+	    <th>Clan Rank</th>
+	    <th>Name</th>
+	    <th>League</th>
+	    <th>Trophies</th>
+	    <th>Donations</th>
+	    <th>Received</th>
+	</tr>
+    </thead>
+    <tbody>
+	<tr *ngFor="let member of memberList">
+	    <td>{{ member.clanRank }} / {{ member.previousClanRank }}</td>
+	    <td>{{ member.name}} - {{ member.role }}</td>
+	    <td><img src="{{ member.league.iconUrls.small }}" alt="{{ member.league.name }}" /></td>
+	    <td>{{ member.trophies }}</td>
+	    <td>{{ member.donations }}</td>
+	    <td>{{ member.donationsReceived }}</td>
+	</tr>
+    </tbody>
+</table>
