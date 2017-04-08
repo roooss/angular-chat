@@ -16,6 +16,53 @@ export class ClanComponent implements OnInit {
     private errorMessage: string;
 
     constructor(private cocService: CocService) {
+	this.details = {
+	    tag: '',
+	    name: '',
+	    type: '',
+	    description: '',
+	    location: {
+		id: 0,
+		name: '',
+		isCountry: false,
+		countryCode: ''
+	    },
+	    badgeUrls: {
+		small: '',
+		large: '',
+		medium: ''
+	    },
+	    clanLevel: 0,
+	    clanPoints: 0,
+	    requiredTrophies: 0,
+	    warFrequency: '',
+	    warWinStreak: 0,
+	    warWins: 0,
+	    warTies: 0,
+	    warLosses: 0,
+	    isWarLogPublic: false,
+	    members: 0,
+	    memberList: [{
+		tag: '',
+		name: '',
+		role: '',
+		expLevel: 0,
+		league: {
+		    id: 0,
+		    name: '',
+		    iconUrls: {
+			small: '',
+			tiny: '',
+			medium: ''
+		    }
+		},
+		trophies: 0,
+		clanRank: 0,
+		previousClanRank: 0,
+		donations: 0,
+		donationsReceived: 0
+	    }]
+	};
     }
 
     getClanDetails() {
