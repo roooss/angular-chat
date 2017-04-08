@@ -12,6 +12,9 @@ import { ClanComponent } from './components/clan/clan.component';
 import { WarLogComponent } from './components/war-log/war-log.component';
 import { PlayerInfoComponent } from './components/player-info/player-info.component';
 
+import { CocService } from './services/coc.service';
+import { ClashService } from './services/clash.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,7 @@ import { PlayerInfoComponent } from './components/player-info/player-info.compon
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CocService, ClashService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
