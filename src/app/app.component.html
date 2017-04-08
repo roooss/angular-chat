@@ -1,18 +1,22 @@
 <div data-sticky-container>
     <div class="title-bar" data-sticky-options="margin-top: 0;" style="width: 100%">
         <div class="title-bar-left">
-	    <h1>Wild Warriors -- Clash Of Clans.</h1>
+	    <ul class="dropdown menu" data-dropdown-menu>
+		<li class="menu-text"><h1>Wild Warriors <small>Clash Of Clans.</small></h1></li>
+		<li><a routerLink="/clan">Clan</a></li>
+		<li><a routerLink="/chat">Chat</a></li>
+		<li><a routerLink="/player-info">Player Info</a></li>
+		<li><a routerLink="/war-log">War Log</a></li>
+	    </ul>
 	</div>
 	<div class="totle-bar-right">
-	    <ul class="dropdown menu align-right" data-dropdown-menu>
+	    <ul class="menu align-right" data-dropdown-menu>
 		<li><a routerLink="/home">Home</a></li>
 		<li><a routerLink="/profile/2">Profile</a></li>
+		<li><a class="button warning" routerLink="/login">Login</a></li>
 	    </ul>
 	</div>
     </div>
-</div>
-<div class="row">
-    <h1>{{title}}</h1>
 </div>
 <div class="row">
     <router-outlet></router-outlet>

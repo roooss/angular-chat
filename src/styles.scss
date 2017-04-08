@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/foundation-sites/assets/foundation";
 
+@font-face {
+    font-family: 'Supercell-Magic';
+    src: url('./assets/Supercell-Magic.eot');
+    src: url('./assets/Supercell-Magic.eot?#iefix') format('embedded-opentype'),
+	 url('./assets/Supercell-Magic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $foundation-palette: (
     primary: #3366cc,
     secondary: #767676,
@@ -11,6 +20,11 @@ $foundation-palette: (
 
 body {
     background-color: #302f2e;
+    font-family: Supercell-Magic, Georgia, serif;
+}
+
+label, input, textarea, p, a, h1, h2, h3, h4, h5, h6 {
+    font-family: Supercell-Magic, Georgia, serif;
 }
 
 a {	   
@@ -26,6 +40,12 @@ a {
 
     .title-bar-right, .title-bar-left {
 	transition: padding-top .25s ease;
+    }
+
+    .title-bar-left {
+	.menu-text {
+	    padding-top: 0;
+	}
     }
 
     .title-bar-right {

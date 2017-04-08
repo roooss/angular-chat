@@ -1,0 +1,15 @@
+.chat-window {
+    background-color: pink;
+    min-height: 400px;
+    margin-bottom: 15px;
+
+    .conversation {
+	background-color: blue;
+	min-height: 100%;
+    }
+
+    .oniine {
+	background-color: purple;
+	min-height: 100%;
+    }
+}
