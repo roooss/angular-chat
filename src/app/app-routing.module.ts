@@ -13,7 +13,7 @@ const routes: Routes = [
     { path: 'profile/:id', component: ProfileComponent },    
     { path: 'chat', component: ChatScreenComponent  },
     { path: 'clan', component: ClanComponent  },
-    { path: 'player-info', component: PlayerInfoComponent  },
+    { path: 'player-info/:id', component: PlayerInfoComponent  },
     { path: 'war-log', component: WarLogComponent  },
     { path: '', component: HomeComponent, pathMatch: 'full' }
 ];

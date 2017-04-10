@@ -1,4 +1,4 @@
-<table>
+<table class="hover">
     <thead>
 	<tr>
 	    <th>Clan Rank</th>
@@ -10,9 +10,10 @@
 	</tr>
     </thead>
     <tbody>
-	<tr *ngFor="let member of memberList">
+	<tr *ngFor="let member of memberList"
+	    (click)="onSelect(member.tag)">
 	    <td>{{ member.clanRank }} / {{ member.previousClanRank }}</td>
-	    <td>{{ member.name}} - {{ member.role }}</td>
+	    <td>{{ member.name }} - {{ member.role }}</td>
 	    <td><img src="{{ member.league.iconUrls.small }}" alt="{{ member.league.name }}" /></td>
 	    <td>{{ member.trophies }}</td>
 	    <td>{{ member.donations }}</td>

@@ -3,6 +3,12 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://roooss:1WhiskeyChaser@127.0.0.1:27017/');
+var db = mongoose.connection;
+
 // Get our API routes
 const api = require('./src/api/routes/api');
 

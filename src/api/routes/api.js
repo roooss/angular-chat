@@ -16,7 +16,28 @@ router.get('/', (req, res) => {
 router.get('/clan-details', (req, res) => {
     // Get posts from the mock api
     // This should ideally be replaced with a service that connects to MongoDB
+    
+    console.log('API Call: ' + clanTag);
+    
     axios.get(`${API}/clans/${encodeURIComponent(clanTag)}`, { headers: {'Accept': 'application/json', 'Authorization': `Bearer ${apiToken}`} })
+	 .then(posts => {
+	     res.setHeader('Content-Type', 'application/json');
+             res.status(200).json(posts.data);
+	 })
+	.catch(error => {
+	    res.status(500).send(error)
+	});
+});
+
+router.get('/player-details/:id', (req, res) => {
+
+    let playerTag = req.params.id;
+
+    console.log('API Call: ' + playerTag);
+
+    // Get posts from the mock api
+    // This should ideally be replaced with a service that connects to MongoDB
+    axios.get(`${API}/players/${encodeURIComponent(playerTag)}`, { headers: {'Accept': 'application/json', 'Authorization': `Bearer ${apiToken}`} })
 	 .then(posts => {
 	     res.setHeader('Content-Type', 'application/json');
              res.status(200).json(posts.data);

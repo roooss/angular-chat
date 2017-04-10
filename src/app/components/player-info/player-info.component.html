@@ -1,3 +1,108 @@
-<p>
-  player-info works!
-</p>
+<div class="callout">
+<div class="row">
+    <div class="medium-6 columns">
+	<img src="{{ playerDetails.league.iconUrls.medium }}" alt="{{ playerDetails.league.name }}" />
+    </div>
+    <div class="medium-6 large-5 columns">
+	<h3>{{ playerDetails.name }} <small>{{ playerDetails.role }}</small></h3>
+	<div class="row">
+	    <div class="small-7 columns">
+		<label >Town hall Level:</label>
+	    </div>
+	    <div class="small-5 columns">
+		<label>{{ playerDetails.townHallLevel }}</label>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="small-7 columns">
+		<label >War Stars:</label>
+	    </div>
+	    <div class="small-5 columns">
+		<label>{{ playerDetails.warStars }}</label>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="small-7 columns">
+		<label>Exp Lvl:</label>
+	    </div>
+	    <div class="small-5 columns">
+		<label>{{ playerDetails.expLevel }}</label>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="small-7 columns">
+		<label>Trophies:</label>
+	    </div>
+	    <div class="small-5 columns">
+		<label>{{ playerDetails.trophies }} / {{ playerDetails.bestTrophies }}</label>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="small-7 columns">
+		<label>Acctack / Defense Wins:</label>
+	    </div>
+	    <div class="small-5 columns">
+		<label>{{ playerDetails.attackWins }} / {{ playerDetails.defenseWins }}</label>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="small-7 columns">
+		<label>Donations / Received :</label>
+	    </div>
+	    <div class="small-5 columns">
+		<label>{{ playerDetails.donations }} / {{ playerDetails.donationsReceived }}</label>
+	    </div>
+	</div>
+	<div class="row small-up-2">
+	    <div class="column callout primary">
+		<label>Clan Name: <small>{{ playerDetails.clan.name }}</small></label>
+	    </div>
+	    <div class="column callout warning">
+		<label>League: <small>{{ playerDetails.league.name }}</small></label>
+	    </div>
+	</div>
+    </div>
+</div>
+<div class="row">
+    <p-accordion>
+	<p-accordionTab header="Troops" [selected]="true">  
+	    <div class="row small-up-8">
+		<div class="column primary" *ngFor="let troop of playerDetails.troops">
+		    <label><small>{{ troop.name }}</small></label>
+		    <label>Level: <small>{{ troop.level }} / {{ troop.maxLevel }}</small></label>
+		</div>
+	    </div>
+	</p-accordionTab>
+	<p-accordionTab header="Heroes">
+	    <div class="row small-up-8">
+		<div class="column primary" *ngFor="let hero of playerDetails.heroes">
+		    <label><small>{{ hero.name }}</small></label>
+		    <label>Level: <small>{{ hero.level }} / {{ hero.maxLevel }}</small></label>
+		</div>
+	    </div>
+	</p-accordionTab>
+	<p-accordionTab header="Spells">
+	    <div class="row small-up-8">
+		<div class="column primary" *ngFor="let spell of playerDetails.spells">
+		    <label><small>{{ spell.name }}</small></label>
+		    <label>Level: <small>{{ spell.level }} / {{ spell.maxLevel }}</small></label>
+		</div>
+	    </div>
+	</p-accordionTab>
+	<p-accordionTab header="Achievements">
+	    <div class="row small-up-1">
+		<div class="column primary" *ngFor="let achievement of playerAchievements">
+		    <label><small>{{ achievement.name }}</small></label>
+		    <label><small>{{ achievement.info }}</small></label>
+		    <label><small>{{ achievement.completionInfo }}</small></label>
+		    <label><small>{{ achievement.value }} / {{ achievement.target }}</small></label>
+		    <p-progressBar [value]="achievement.percent"></p-progressBar>
+		    <!--<div class="alert progress">
+			<div class="progress-meter" [style]="achievement.percent"></div>
+		    </div>-->
+		</div>
+	    </div>   
+	</p-accordionTab>
+    </p-accordion>
+</div>
+</div>

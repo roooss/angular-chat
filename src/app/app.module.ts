@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,11 @@ import { CocService } from './services/coc.service';
 import { ClashService } from './services/clash.service';
 import { MemberListComponent } from './components/member-list/member-list.component';
 
+import { AccordionModule } from 'primeng/components/accordion/accordion';
+import { ProgressBarModule } from 'primeng/primeng';
+import { RegisterComponent } from './components/register/register.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +31,17 @@ import { MemberListComponent } from './components/member-list/member-list.compon
     ClanComponent,
     WarLogComponent,
     PlayerInfoComponent,
-    MemberListComponent
+    MemberListComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+      AccordionModule,
+      ProgressBarModule,
+    BrowserAnimationsModule
   ],
   providers: [CocService, ClashService],
   bootstrap: [AppComponent]

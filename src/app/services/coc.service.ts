@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { ClanDetails, MemberList, Location, League, IconUrls, BadgeUrls } from '../interfaces/ClanDetails'
-
+import {PlayerDetails, Clan, Spell, Hero, Achievement, Troop} from '../interfaces/PlayerDetails';
 
 @Injectable()
 export class CocService {
@@ -20,13 +20,23 @@ export class CocService {
 	
 	let mapTemp = temp.map((res: Response) => {
 	    let tempJson = res.json();
-
-	    console.log(tempJson.description);
-
 	    let tempObj = <ClanDetails> tempJson;
 
 	    return tempObj;
 	}); //.catch(this.handleError);
+
+	return mapTemp;
+    }
+
+    getPlayerDetails(playerTag: string): Observable<PlayerDetails> {
+	let temp = this.http.get(`${this.baseUrl}/player-details/${playerTag}`);
+	
+	let mapTemp = temp.map((res: Response) => {
+	    let tempJson = res.json();
+	    let tempObj = <PlayerDetails> tempJson;
+
+	    return tempObj;
+	});
 
 	return mapTemp;
     }
